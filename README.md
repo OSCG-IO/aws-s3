@@ -1,20 +1,24 @@
 # aws-s3
 
-AWS RDS Postgres supports Importing & Exporting data to S3 [support](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.html#USER_PostgreSQL.S3Import.FileFormats) for S3 import using the extension `aws_s3`. It allows to import data from S3 within Postgres using the function `aws_s3.table_import_from_s3` and export the data to S3 using the function `aws_s3.query_export_to_s3`.
+AWS RDS Postgres [supports](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.html#USER_PostgreSQL.S3Import.FileFormats) importing & exporting data to S3. Their aws_s3 extension allows to import data from S3 within Postgres using the function `aws_s3.table_import_from_s3` and export the data to S3 using the function `aws_s3.query_export_to_s3`.
 
-In order to support PostgreSQL locally, we provide our own `aws_s3` extension that is similar to
-the one provided in RDS. It was implemented in Python using the boto3 library.
-Special thanks to the https://github.com/chimpler/postgres-aws-s3 project for their excellent work startinmg up this project
+In order to support pure 100% Open Source PostgreSQL locally, we provide our own `aws_s3` extension that is very similar to
+the one provided by AWS. It has been implemented in Python3 using the boto3 library.
 
-## Installation
+Special thanks to the https://github.com/chimpler/postgres-aws-s3 project for their excellent work starting up this project.
+We have done a clean fork since it appears that the Chimpler folks are no longer maintaining this project.   Out intent is to fully
+support pg12 thru pg15 before we consider adding any new functionality.
+
+
+## Building from Source
 Make sure boto3 is installed using the default Python 3 installed on your computer.
 On MacOS, this can be done as follows:
 
-    sudo /usr/bin/easy_install boto3
+    brew install awscli boto3
 
-Then clone the repository `postgres-aws-s3`:
+Then clone the repository `aws-s3`:
 
-    git clone git@github.com:chimpler/postgres-aws-s3
+    git clone git@github.com:oscg-io/aws-s3
     
 Make sure that `pg_config` can be run:
 ```

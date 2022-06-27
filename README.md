@@ -5,33 +5,22 @@ AWS RDS Postgres [supports](https://docs.aws.amazon.com/AmazonRDS/latest/UserGui
 In order to support pure 100% Open Source PostgreSQL locally, we provide our own `aws_s3` extension that is very similar to
 the one provided by AWS. It has been implemented in Python3 using the boto3 library.
 
-Special thanks to the https://github.com/chimpler/postgres-aws-s3 project for their excellent work starting up this project.
+Special thanks to the https://github.com/chimpler/postgres-aws-s3 project for their excellent work starting up that project.
 We have done a clean fork since it appears that the Chimpler folks are no longer maintaining this project.   Out intent is to fully
 support pg12 thru pg15 before we consider adding any new functionality.
 
 
 ## Building from Source
 Make sure boto3 is installed using the default Python 3 installed on your computer.
-On MacOS, this can be done as follows:
 
-    brew install awscli boto3
 
-Then clone the repository `aws-s3`:
+Then clone the repository `aws-s3` in the config directory of a recent PG source tree:
 
     git clone git@github.com:oscg-io/aws-s3
     
-Make sure that `pg_config` can be run:
 ```
 $ pg_config 
 
-BINDIR = /Applications/Postgres.app/Contents/Versions/13/bin
-DOCDIR = /Applications/Postgres.app/Contents/Versions/13/share/doc/postgresql
-HTMLDIR = /Applications/Postgres.app/Contents/Versions/13/share/doc/postgresql
-INCLUDEDIR = /Applications/Postgres.app/Contents/Versions/13/include
-PKGINCLUDEDIR = /Applications/Postgres.app/Contents/Versions/13/include/postgresql
-INCLUDEDIR-SERVER = /Applications/Postgres.app/Contents/Versions/13/include/postgresql/server
-LIBDIR = /Applications/Postgres.app/Contents/Versions/13/lib
-...
 ```
 
 Then install `aws-s3`:
